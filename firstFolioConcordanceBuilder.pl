@@ -10,7 +10,6 @@ use strict;
 use warnings;
 use XML::Twig;
 use MARPA::R2::HTML;
-#test
 
 # Create a structure of URLs to parse. I'm thinking a stack so that they can be popped off
 # as we process them. These URLS will point to the First Folio old spelling transcripts from
