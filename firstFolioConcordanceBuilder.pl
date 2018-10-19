@@ -9,16 +9,27 @@
 use strict;
 use warnings;
 use XML::Twig;
-use MARPA::R2::HTML;
+use HTML::TokeParser::Simple;
 
 # Create a structure of URLs to parse. I'm thinking a stack so that they can be popped off
 # as we process them. These URLS will point to the First Folio old spelling transcripts from
 # the University of Victoria's Internet Shakespeare Editions. The structure will also have to have the
 # name and short hand name of the play
 
+my %urls =
+(
+  # we will fill these all in eventually, but for now start with one.
+  'AWW' => 'http://internetshakespeare.uvic.ca/doc/AWW_F1/complete/'
+);
+
 # Foreach URL {
 
 # 1.  Fetch the URL, download the page.
+
+foreach my $key keys(%urls) {
+
+}
+
 # 1.3 Add the short name of the play as primary key to a shows table. Add the full name as a field,
 #	along with a URL to the play's front page.
 # 2.  Extract all of the lines and stage directions (?) and quere them for separate persing.
