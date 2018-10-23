@@ -10,6 +10,7 @@ use strict;
 use warnings;
 use XML::Twig;
 use HTML::TokeParser::Simple;
+use LWP::Simple qw(get);
 
 # Create a structure of URLs to parse. I'm thinking a stack so that they can be popped off
 # as we process them. These URLS will point to the First Folio old spelling transcripts from
@@ -26,8 +27,20 @@ my %urls =
 
 # 1.  Fetch the URL, download the page.
 
-foreach my $key keys(%urls) {
+foreach my $key (keys %urls) {
+  # print "$key maps to $urls{$key}\n";
+  my %words; # init an empty hash to track words in the this URL.
 
+  # check to see if a file exists in the form of $key.html. if yes, use it
+  # as the file. If no, download from the URL and write to that file, and THEN
+  # use that file.
+  #
+  # Yes, this presumes a good faith file, so we need to devise some better
+  # means of checking the file to verify it looks like the sort of file we
+  # are expecting.
+
+  my $html = get $urls{$key};
+  
 }
 
 # 1.3 Add the short name of the play as primary key to a shows table. Add the full name as a field,
