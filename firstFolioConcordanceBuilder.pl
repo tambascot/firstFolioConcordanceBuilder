@@ -8,7 +8,6 @@
 # LICENSE: This program is free software, licensed under version 2 of the GNU General Public License.
 use strict;
 use warnings;
-use XML::Twig;
 use HTML::TokeParser::Simple;
 use LWP::Simple qw(get);
 
@@ -40,7 +39,7 @@ foreach my $key (keys %urls) {
   # are expecting.
 
   my $html = get $urls{$key};
-  
+
 }
 
 # 1.3 Add the short name of the play as primary key to a shows table. Add the full name as a field,
