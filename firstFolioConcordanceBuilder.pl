@@ -18,8 +18,48 @@ use LWP::Simple qw(get);
 
 my %urls =
 (
-  # we will fill these all in eventually, but for now start with one.
-  'AWW' => 'http://internetshakespeare.uvic.ca/doc/AWW_F1/complete/'
+  # Key is the standard MLA abbreviation for the Shakespeare play in question.
+  # Value is the URL to the complete text of the old spelling transcription of
+  # the first folio edition of that play at the University of
+  # Victoria's Internet Shakespeare Editions collection
+  'Ado' => 'http://internetshakespeare.uvic.ca/doc/Ado_F1/complete/',
+  'AWW' => 'http://internetshakespeare.uvic.ca/doc/AWW_F1/complete/',
+  'Ant' => 'http://internetshakespeare.uvic.ca/doc/Ant_F1/complete/',
+  'AYL' =>
+  'Cor' =>
+  'Cym' =>
+  'Err' =>
+  'Ham' =>
+  '1H4' =>
+  '2H4' =>
+  'H5'  =>
+  '1H6' =>
+  '2H6' =>
+  '3H6' =>
+  'H8'  =>
+  'JC'  =>
+  'Jn'  =>
+  'LLL' =>
+  'Lr'  =>
+  'Mac' =>
+  'MM'  =>
+  'MND' =>
+  'MV'  =>
+  'Oth' =>
+  'Per' =>
+  'R2'  =>
+  'R3'  =>
+  'Rom' =>
+  'Shr' =>
+  'TGV' =>
+  'Tim' =>
+  'Tit' =>
+  'Tmp' =>
+  'TN'  =>
+  'TNK' =>
+  'Tro' =>
+  'Wiv' =>
+  'WT'  =>
 );
 
 # Foreach URL {
