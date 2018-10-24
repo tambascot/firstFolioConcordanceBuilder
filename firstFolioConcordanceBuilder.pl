@@ -70,9 +70,16 @@ foreach my $key (keys %urls) {
   # print "$key maps to $urls{$key}\n";
   my %words; # init an empty hash to track words in the this URL.
 
-  # check to see if a file exists in the form of $key.html. if yes, use it
-  # as the file. If no, download from the URL and write to that file, and THEN
-  # use that file.
+  # check to see if a file exists in the form of $key.html. if yes,
+  # check to see if it has a stamp in the form of
+  # <!-- downloaded from $urls{$key} on some date --> as the first line and
+  # ends with </body></html>.
+  # if yes, use that file. If NO, then download the data from the URL or die.
+  # and then check to make sure the downloaded data ends with </body></html>
+  # or die.
+  # then create a file for writing or die. And then write our test string to
+  # the first line of that file, and THEN write the HTML data from that file,
+  # close the file handle for writing.
   #
   # Yes, this presumes a good faith file, so we need to devise some better
   # means of checking the file to verify it looks like the sort of file we
